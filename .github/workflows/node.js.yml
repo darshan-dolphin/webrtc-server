@@ -25,12 +25,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
     
     - name: Yarn install
     - run: yarn install
-
-    - name: Install FB tools
-    - run: npm install -g firebase-tools
 
     - name: Yarn CLI
     - uses: CultureHQ/actions-yarn@v1.0.1
