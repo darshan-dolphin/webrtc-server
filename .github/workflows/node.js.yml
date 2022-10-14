@@ -27,13 +27,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    
-    - name: Yarn install
     - run: yarn install
-
-    - name: Yarn CLI
-    - uses: CultureHQ/actions-yarn@v1.0.1
-
-    - name: Get yarn cache directory path
-    - id: yarn-cache-dir-path
-    - run: echo "::set-output name=dir::$(yarn cache dir)"
+    - run: yarn start
