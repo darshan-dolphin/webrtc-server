@@ -4,9 +4,13 @@ import { Server } from "socket.io";
 import cors from "cors";
 import { roomHandler } from "./room";
 
-const port = 5375;
+const port = 8807;
 const app = express();
-app.use(cors);
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
